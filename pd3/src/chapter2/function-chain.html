@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Chain</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/d3.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    let body = d3.select('body');
+    
+    body.append('section')
+        .attr('id','section1')
+        .append('div')
+        .attr('class','blue box')
+        .append('p')
+        .text('dynamic blue box');
+    
+    body.append('section2')
+        .attr('id','section2')
+        .append('div')
+        .attr('class','red box')
+        .append('p')
+        .text('dynamic red box');
+</script>
+</body>
+</html>

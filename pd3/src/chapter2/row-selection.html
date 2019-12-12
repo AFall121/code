@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Row Selection</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/d3.js"></script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>        
+            <tr>
+                <td>10:22</td>
+                <td>Purchase</td>
+                <td>$10.00</td>
+            </tr>
+            <tr>
+                <td>12:12</td>
+                <td>Purchase</td>
+                <td>$12.50</td>
+            </tr>
+            <tr>
+                <td>14:11</td>
+                <td>Expense</td>
+                <td>$9.70</td>
+            </tr>
+        </tbody>
+    </table>
+<script type="text/javascript">
+    d3.selectAll('th')
+        .style('background','#4477ecbd')
+        .style('color','white');
+        
+    d3.selectAll('tr')
+        .style('height','30px')
+        .each(
+            function(){
+                d3.select(this)
+                .select(':first-child')
+                .style('width','250px');
+                d3.select(this)
+                .select(':nth-child(2)')
+                .style('width','350px');
+                d3.select(this)
+                .select(':nth-child(3)')
+                .style('width','300px');
+        });
+    d3.selectAll('tr:nth-child(odd)')
+        .style('background','gray');
+    
+</script>
+</body>
+</html>

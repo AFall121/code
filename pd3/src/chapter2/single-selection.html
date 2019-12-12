@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Single Selection</title>
+	<link rel="stylesheet" href="../../css/style.css">
+	<script src="../../lib/d3.js"></script>
+	<style>
+		.red{
+			color:red;
+		}
+		.green{
+			color:green;
+		}
+	</style>
+</head>
+<body>
+	<p id="target" class="green"></p>
+	<div id="firstD"></div>
+	<script type="text/javascript">
+		d3.select('p#target').text('Hello World!');
+		// d3.select('p').classed('green',false);
+		// d3.select('p').classed('green',function(){return false;});
+		// d3.select('p').classed('red',true);
+		// console.log(d3.select('p').style('color'));
+		// d3.select('p').style('font-size','32px');
+		// d3.select('p').style('font-size',function(){return parseFloat(d3.select(this).style('font-size'))+20+'px';});
+		// console.log(parseFloat(d3.select('p').style('font-size')));
+		d3.select('#firstD').text('I\'m first div!');
+		// d3.select('#firstD').text(function(){return Date().toString();});
+		// d3.select('#firstD').html('<h3>nihao<span class="red">mingtian</span></h3><p>This is html() method test.</p>');
+		// function nihao(){
+		// 	return d3.select(this).text('hahahhaha');
+		// }
+		d3.select('#firstD').html(function(){return d3.select(this).text()+"<h3>this is <span class='red'>test</span></h3><p>this is html function prameter test.</p>";});
+	</script>
+</body>
+</html>

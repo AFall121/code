@@ -1,0 +1,22 @@
+body{
+	font-family: "helvetica";
+}
+.box{
+	width: 200px;
+	height: 200px;
+	margin: 40px;
+	float: left;
+	text-align: center;;
+	border: #969696 solid thin;
+	padding: 5px;
+}
+.red{
+	background-color: red;
+}
+.blue{
+	background-color: blue;
+}
+.h-bar{
+	background-color: aquamarine;
+	text-align: right;
+}

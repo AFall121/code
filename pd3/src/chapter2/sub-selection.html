@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiple Selection</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../lib/d3.js"></script>
+</head>
+<body>
+    <section id="section1"><div></div></section>
+    <section id="section2"><div></div></section>
+<script type="text/javascript">
+    d3.select('#section1 > div').attr('class','red box');
+    d3.select('#section2').select('div').attr('class','blue box');
+    // d3.select('#section1 div').style('background','black');
+</script>
+</body>
+</html>
