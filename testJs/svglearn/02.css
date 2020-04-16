@@ -1,0 +1,25 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #070320;
+}
+svg
+{
+    width: 110px;
+    height: 110px;
+}
+svg circle
+{
+    fill: yellow;
+    stroke: white;
+    stroke-width: 10px;
+    transform: translate(5px,5px);
+}

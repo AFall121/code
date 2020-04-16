@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九宫格</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            width: 640px;
+            height: 640px;
+            border: 6px solid rgb(150, 212, 236);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px skyblue;
+            margin: 50px auto;
+
+
+            position: relative;
+        }
+
+        ul>li {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 10px;
+
+            font-size: 100px;
+            color: #fff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+        }
+
+        ul>li:hover {
+            /* transform: scale(1.06); */
+            box-shadow: 0px 0px 10px rgb(4, 69, 95);
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;color:purple"><span style="display: block;margin-top: 20px;">九宫格</span></h2>
+    <ul>
+        <li style="top: 10px; left: 10px;">1</li>
+        <li style="top: 10px; left: 220px;">2</li>
+        <li style="top: 10px; left: 430px;">3</li>
+        <li style="top: 220px; left: 10px;">4</li>
+        <li style="top: 220px; left: 220px;">5</li>
+        <li style="top: 220px; left: 430px;">6</li>
+        <li style="top: 430px; left: 10px;">7</li>
+        <li style="top: 430px; left: 220px;">8</li>
+        <li style="top: 430px; left: 430px;">9</li>
+    </ul>
+
+    <script>
+        let ul = document.querySelector('ul');
+        let lis = document.querySelectorAll('ul>li');
+        var startLeft, startTop,
+            startX, startY,
+            moveX, moveY,
+            ul_Width = ul.clientWidth,
+            ul_Height = ul.clientWidth
+        var colorArry = ['yellow', 'pink', 'red', 'orange', 'green', 'skyblue', 'purple', 'blue', 'hotpink'];
+
+
+        //add background-color for every li
+        /*
+        method1: use  arr
+        */
+        // lis.forEach(function(item,index,arr){
+        //     arr[index].style.backgroundColor = colorArry[index];
+        // });
+        /*
+        method2: use item
+        */
+        // lis.forEach(function(item,index){
+        //     item.style.backgroundColor = colorArry[index];
+        // });
+
+        //给每一个li 绑定事件
+        /**
+         * 1.绑定事件
+         *  + mousedown
+         *  + mousemove
+         *  + mouseup
+         *  + mouseout
+         */
+
+        lis.forEach(function (item, index) {
+            item.style.backgroundColor = getColor()
+            item.addEventListener('mousedown', function (e) {
+                e = e || window.event;
+                startX = e.clientX
+                startY = e.clientY
+                //初始的左边的像素
+                startLeft = this.offsetLeft
+                startTop = this.offsetTop
+
+                this.style.transition = 'none'
+                this.addEventListener('mousemove', move)
+                this.addEventListener('mouseout', out)
+                item.addEventListener('mouseup', up)
+                // this.addEventListener('mouseup',up)
+            })
+
+        })
+        //取消选中状态
+        document.addEventListener('selectstart', function (e) {
+            e = e || window.event
+
+            if (e.preventDefault) {
+                e.preventDefault()
+            } else {
+                e.returnValue = false
+            }
+        })
+        function getColor() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+        //four handle event function
+        // function down() {
+        //     console.log('鼠标按下');
+        //     this.addEventListener('mousemove',move);
+        //     this.addEventListener('mouseout',out);
+        // }
+        function move(e) {
+            e = e || window.event
+            //记录移动到的位置
+            moveX = e.clientX - startX + startLeft
+            moveY = e.clientY - startY + startTop
+            //边界值判断
+            if (moveX <= 0) {
+                moveX = 0
+            }
+
+            if (moveY <= 0) {
+                moveY = 0
+            }
+
+            if (moveX >= ul_Width - this.offsetWidth) {
+                moveX = ul_Width - this.offsetWidth
+            }
+
+            if (moveY >= ul_Height - this.offsetHeight) {
+                moveY = ul_Height - this.offsetHeight
+            }
+            this.style.left = moveX + 'px'
+            this.style.top = moveY + 'px'
+            this.style.zIndex = 10
+        }
+        function out() {
+            this.removeEventListener('mousemove', move);
+            this.removeEventListener('mouseout', out);
+            this.removeEventListener('mouseup', up);
+
+            this.style.transition = 'all 0.3s linear'
+            this.style.left = startLeft + 'px'
+            this.style.top = startTop + 'px'
+            this.style.zIndex = 1
+
+        }
+        function up() {
+            this.removeEventListener('mousemove', move);
+            this.removeEventListener('mouseout', out);
+            this.removeEventListener('mouseup', up);
+
+            let _this = this
+            let touchArr = []
+
+            lis.forEach(function (item) {
+                if (item !== _this) {
+
+                    if (
+                        Math.abs(item.offsetLeft - _this.offsetLeft) <= _this.offsetWidth &&
+                        Math.abs(item.offsetTop - _this.offsetTop) <= _this.offsetHeight
+                    ) {
+                        touchArr.push(item)
+                    }
+                }
+            })
+            var touchArea = 0
+            var areaEle = null
+            touchArr.forEach(function (item) {
+                var x = _this.offsetWidth - Math.abs(_this.offsetLeft - item.offsetLeft)
+                var y = _this.offsetHeight - Math.abs(_this.offsetTop - item.offsetTop)
+                console.log(item,x*y)
+                if (x * y > touchArea) {
+                    touchArea = x * y
+                    areaEle = item
+                }
+            })
+            if (areaEle) {
+                this.style.transition = 'all 0.3s linear'
+                this.style.left = areaEle.offsetLeft + 'px'
+                this.style.top = areaEle.offsetTop + 'px'
+                areaEle.style.transition = 'all 0.3s linear'
+                areaEle.style.left = startLeft + 'px'
+                areaEle.style.top = startTop + 'px'
+            } else {
+                this.style.transition = 'all 0.3s linear'
+                this.style.left = startLeft + 'px'
+                this.style.top = startTop + 'px'
+            }
+            this.style.zIndex = 1
+
+        }
+    </script>
+</body>
+
+</html>

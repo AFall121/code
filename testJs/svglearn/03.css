@@ -1,0 +1,65 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: black;
+
+}
+svg
+{
+    position: relative;
+    width: 420px;
+    height: 320px;
+    animation: rotate 2s linear 1s infinite;
+}
+svg rect
+{
+    width: 400px;
+    height: 300px;
+    border-radius: 50%;
+    fill: white;
+    stroke: purple;
+    stroke-width: 20px;
+    stroke-linecap: round;
+    transform: translate(10px,10px);
+    transform-origin: 200px 150px;
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    /* animation:  rotate 1s linear 2s infinite; */
+    animation: animate 2s linear 1s infinite;
+}
+@keyframes animate
+{
+    0%,100%
+    {
+        stroke-dashoffset: 1400;
+    }
+    50%
+    {
+        stroke-dashoffset: 0;
+    }
+    50.1%
+    {
+        stroke-dashoffset: 2800;
+    }
+
+}
+@keyframes rotate
+{
+    0%
+    {
+        transform: rotate(0deg);;
+    }
+    100%
+    {
+        transform: rotate(180deg);
+    }
+    
+}

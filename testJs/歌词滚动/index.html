@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/musicPlay.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+</head>
+
+<body>
+    <div class="text-container">
+        <p class="my-tip" data-tip="提示内容：CSS实现效果">CSS自定义提示信息</p>
+    </div>
+    <div style="width: 100%;height: 150px;">
+        <i class="fa fa-play" aria-hidden="true"></i>
+        <i class="fa fa-pause" aria-hidden="true"></i>
+        <i class="fa fa-forward" aria-hidden="true"></i>
+        <i class="fa fa-backward" aria-hidden="true"></i>
+
+        <i class="fa fa-expand" aria-hidden="true"></i>
+        <i class="fa fa-compress" aria-hidden="true"></i>
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <i class="fa fa-music" aria-hidden="true"></i>
+        <!-- 下面这个钻石图标有问题显示不了 -->
+        <i class="fa fa-diamond" aria-hidden="true"></i>
+        <!-- 所以用了英文官网的gem -->
+        <i class="far fa-gem"></i>
+        <i class="fas fa-chevron-down"></i>
+
+    </div>
+    <audio src="./statics/streams/死了都要爱.m4a" controls></audio>
+    <div id="musicPlay">
+        <!-- 容器 -->
+        <section id="container">
+            <!-- 左侧栏 -->
+            <aside id="side"></aside>
+            <!-- 右侧内容 -->
+            <section id="main">
+                <!-- 右侧头部 -->
+                <header id="main-header">
+                    <nav>
+                        <div id="top-left">
+                            <span class="icon-basic"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+                            <span class="icon-basic"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                            <input type="search" name="search" id="search">
+                            <span class="icon-basic"><i class="fa fa-music" aria-hidden="true"></i></span>
+                        </div>
+                        <div id="top-right">
+                            <!-- <div class="user-avatar" alt="user-avatar"></div> -->
+                            <img id="user-avatar">
+                            <span name='username'></span>
+                            
+                            <ul>
+                                <li><a href=""><span class="icon-basic" title="VIP尽显奢华"><i class="far fa-gem"></i></span></a></li>
+                                <li><a href=""><span class="icon-basic" title="VIP尽显奢华"><i class="fas fa-chevron-down"></i></span></a></li>
+                                <li><a href=""><span class="icon-basic" title="VIP尽显奢华"><svg t="1586053767553" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1436" width="16" height="16"><path d="M692.095 184C663.52 255.494 593.655 306 512 306s-151.52-50.506-180.095-122h-98.308l-68.71 90.491 64.29 49.346a104.021 104.021 0 0 1 40.678 82.518V840h484.29V406.355a104.021 104.021 0 0 1 40.677-82.518l64.291-49.346L790.403 184h-98.308z m-71.9 0h-216.39c23.288 34.964 63.053 58 108.195 58 45.142 0 84.907-23.036 108.194-58z m-406.431-72h596.472a31.975 31.975 0 0 1 25.466 12.642l104.78 137.996c10.65 14.026 7.969 34.027-6 44.748l-95.863 73.579a32.007 32.007 0 0 0-12.516 25.39V880c0 17.673-14.318 32-31.981 32H229.878c-17.663 0-31.981-14.327-31.981-32V406.355c0-9.95-4.626-19.334-12.516-25.39l-95.863-73.579c-13.969-10.721-16.65-30.722-6-44.748l104.78-137.996A31.975 31.975 0 0 1 213.764 112z" p-id="1437"></path></svg></span></a></li>
+                                <li><a href=""><span class="icon-basic" title="VIP尽显奢华"><i class="fa fa-bars" aria-hidden="true"></i></span></a></li>
+                            </ul>
+                            <span style="font-size: 18px;">|</span>
+                            <ul>
+                                <li><a href=""><span class="icon-basic"><i class="fa fa-minus" aria-hidden="true"></i></span></a></li>
+                                <li><a href=""><span class="icon-basic"></span></a></li>
+                                <li><a href=""><span class="icon-basic"></span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+                <!-- 右侧主体 -->
+                <section id="main-main"></section>
+                <!-- 右侧底部-->
+                <footer id="main-footer"></footer>
+            </section>
+        </section>
+    </div>
+
+    <!-- 引入组件库 -->
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

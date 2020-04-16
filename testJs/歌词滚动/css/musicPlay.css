@@ -1,0 +1,143 @@
+/* 全局style */
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+/* 容器样式 */
+#container{
+    width: 1100px;
+    height: 780px;
+    background-image: url('../statics/images/background.jpg');
+    margin: 100px auto;
+    display: block;
+    overflow: hidden;
+}
+/* 左侧样式 */
+#side{
+    width: 19%;
+    height: 100%;
+    background-color: rgb(250, 179, 193);
+    display: inline-block;
+}
+/* 右侧样式 */
+#main{
+    width: 81%;
+    height: 100%;
+    background-color: rgb(245, 162, 180);
+    float: right;
+    position: relative;
+}
+/* 右侧头部样式 */
+#main>header{
+    width: 100%;
+    /* height = 78px */
+    height: 10%;
+    /* background-color: skyblue; */
+    position: relative;
+}
+/* 导航样式 */
+#main>header>nav{
+    position: relative;
+    margin: 0 auto;
+    line-height: 50px;
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#main>header>nav ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#main>header>nav li{
+    flex: auto;
+}
+#main>header>nav>#top-left{
+    width: 300px;
+    height: 50px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+#main>header>nav>#top-right{
+    width: 400px;
+    height: 50px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+/* #main>header>nav>#top-right>.user-avatar{
+    width: 32px;
+    height: 32px;
+    background-image: url('../statics/images/user-avatar.jpg');
+    background-size: 32px;
+    border-radius: 16px;
+} */
+#main>header>nav>#top-right>#user-avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    content: url('../statics/images/user-avatar.jpg');
+}
+/* 右侧显示部分样式 */
+#main>section{
+    width: 100%;
+    height: 81%;
+}
+/* 右侧底部 */
+#main>footer{
+    width: 100%;
+    height: 9%;
+    background-color: skyblue;
+}
+/* 图标包装的span样式 */
+.icon-basic{
+    width: 15px;
+    padding: 0 10px;
+    display: inline-block;
+    line-height: 50px;
+    background-color: rgb(247, 160, 177);
+    color: rgb(95, 87, 92);
+}
+.icon-basic:hover{
+    cursor: pointer;
+    color: rgb(228, 53, 82);
+}
+/* 搜索框样式 */
+input[type='search']{
+    margin: 0 6px;
+    width: 160px;
+    height: 32px;
+    border: 0;
+    border-radius: 25px;
+    background-color: rgb(225, 151, 168);
+}
+/* 用户名 */
+span[name='username']{
+    width: 75px;
+    height: 16px;
+    margin: 0 2px 0 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+}
+/* article[data-columns='3'] {
+    width: 400px;
+  }
+  article[data-columns='4'] {
+    width: 600px;
+  } */
+.my-tip:hover::after{
+    width: 100px;
+    outline-offset: 1em;
+    content: attr(data-tip);
+    display: block;
+    z-index: 10px;
+}
