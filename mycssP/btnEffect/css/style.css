@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+    color: white;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+body{
+    background-color: black;
+}
+
+div.wrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 188px;
+    height: 100vh;
+    background-color: teal;
+}
+a.btn{
+
+    width: calc(100% - 2rem);
+    margin: 10vh auto 0;
+    padding: 2px;
+    background-image: linear-gradient(115deg,purple,pink,teal,red,skyblue);
+    border-radius: 6px;
+    text-align: center;
+    display: block;
+}
+a.btn:hover{
+    animation: animate .5s linear infinite;
+}
+
+a.btn span#myStyle{
+    display: block;
+    background-color: black;
+    margin: 3px;
+    padding: 10px 0;
+    transition: background .5s;
+    border-radius: 3px;
+}
+
+span.m{
+    animation: span-m 3s linear 0s infinite;
+}
+span.y{
+    animation: span-y 3s linear 1s infinite;
+}
+span.s{
+    animation: span-s 3s linear 2s infinite;
+}
+span.t{
+    animation: span-t 3s linear 3s infinite;
+}
+span.y{
+    animation: span-y 3s linear 2s infinite;
+}
+span.l{
+    animation: span-l 3s linear 1s infinite;
+}
+span.e{
+    animation: span-e 3s linear 0s infinite;
+}
+
+@keyframes animate {
+    0%,100%{
+        background-image: linear-gradient(115deg,purple,pink,teal,red,skyblue);
+    }
+    20%{
+        background-image: linear-gradient(115deg,skyblue,purple,pink,teal,red);
+    }
+    40%{
+        background-image: linear-gradient(115deg,red,skyblue,purple,pink,teal);
+    }
+    60%{
+        background-image: linear-gradient(115deg,teal,red,skyblue,purple,pink);
+    }
+    80%{
+        background-image: linear-gradient(115deg,pink,red,skyblue,purple,pink);
+    }
+}
+
+@keyframes span-m{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
+@keyframes span-y{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
+@keyframes span-s{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
+@keyframes span-t{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
+@keyframes span-y{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
+@keyframes span-l{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
+@keyframes span-e{
+    0%,100%
+    {
+        color: white;
+    }
+    50%
+    {
+        color: black;
+    }
+}
