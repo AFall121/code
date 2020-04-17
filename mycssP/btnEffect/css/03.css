@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: white;
+    box-sizing: border-box;
+}
+div.logo{
+    width: 188px;
+    height: 75px;
+    background-color: #1e1f26;
+    /* background-color: white; */
+    padding-top: 20px;
+}
+.logo-btn
+{
+    text-decoration: none;
+    display: block;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    padding: 4px;
+    border-radius: 2px;
+    /* letter-spacing: 1px; */
+    background-image: linear-gradient(125deg,rgb(0, 128, 96),rgb(0, 153, 255),rgb(89, 0, 255),rgb(255, 0, 212),rgb(255, 0, 128),rgb(251, 255, 0));
+    animation: logobg .6s linear 0s infinite normal none;
+    font-style: italic;
+    justify-content: center;
+
+}
+.wrap
+{   
+    border-radius: 3px;
+    padding: 6px 0;
+    display: block;
+    text-align: center;
+    background-color: black;
+}
+
+
+.logo-btn .span-1 {
+    animation: span-1 3s linear infinite;
+}
+.logo-btn .span-2 {
+    animation: span-2 3s linear .5s infinite;
+}
+.logo-btn .span-3 {
+    animation: span-3 3s linear 1.5s infinite;
+}
+.logo-btn .span-4 {
+    animation: span-4 3s linear 2s infinite;
+}
+.logo-btn .span-5 {
+    animation: span-5 3s linear 2.5s infinite;
+}
+.logo-btn .span-6 {
+    animation: span-6 3s linear 3s infinite;
+}
+
+@keyframes logobg
+{
+    0%,100%{
+        background-image: linear-gradient(115deg,rgb(0, 128, 96),rgb(0, 153, 255),rgb(89, 0, 255),rgb(255, 0, 212),rgb(255, 0, 128),rgb(251, 255, 0));
+    }
+    16.6%{
+        background-image: linear-gradient(115deg,rgb(251, 255, 0),rgb(0, 128, 96),rgb(0, 153, 255),rgb(89, 0, 255),rgb(255, 0, 212),rgb(255, 0, 128));
+    }
+    33.3%{
+        background-image: linear-gradient(115deg,rgb(255, 0, 128),rgb(251, 255, 0),rgb(0, 128, 96),rgb(0, 153, 255),rgb(89, 0, 255),rgb(255, 0, 212));
+    }
+    50%{
+        background-image: linear-gradient(115deg,rgb(255, 0, 212),rgb(255, 0, 128),rgb(251, 255, 0),rgb(0, 128, 96),rgb(0, 153, 255),rgb(89, 0, 255));
+    }
+    66.6%{
+        background-image: linear-gradient(115deg,rgb(89, 0, 255),rgb(255, 0, 212),rgb(255, 0, 128),rgb(251, 255, 0),rgb(0, 128, 96),rgb(0, 153, 255));
+    }
+    83.3%{
+        background-image: linear-gradient(115deg,rgb(0, 153, 255),rgb(89, 0, 255),rgb(255, 0, 212),rgb(255, 0, 128),rgb(251, 255, 0),rgb(0, 128, 96));
+    }
+}
+
+@keyframes span-1{
+    0%,100%{color: white;}
+    50%{
+        color:red;
+    }
+}
+@keyframes span-2{
+    0%,100%{color: white;}
+    50%{
+        color: skyblue;
+    }
+}
+@keyframes span-3{
+    0%,100%{color: white;}
+    50%{
+        color: purple;
+    }
+}
+@keyframes span-4{
+    0%,100%{color: white;}
+    50%{
+        color: green;
+    }
+}
+@keyframes span-5{
+    0%,100%{color: white;}
+    50%{
+        color: pink;
+    }
+}
+@keyframes span-6{
+    0%,100%{color: white;}
+    50%{
+        color: yellow;
+    }
+}
