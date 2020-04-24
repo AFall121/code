@@ -73,7 +73,7 @@ body{
     background: url(../imges/bg.jpg);
     background-attachment: fixed;
     -webkit-background-clip: text;
-    background-clip: text;
+    background-clip: content-box;
     -webkit-text-fill-color: transparent; 
 }
 
