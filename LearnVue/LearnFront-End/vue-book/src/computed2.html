@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计算属性</title>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2>计算属性</h2>
+					<p>&yen;{{price}}</p>
+		</div>
+
+		
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					cents: 100,
+				},
+				computed: {
+					price : {
+						set : function(newValue){
+							this.cents = newValue * 100;
+						},
+						get : function(){
+							return (this.cents / 100).toFixed(2);
+						}
+					}
+				}
+			})
+			vm.price = 2
+		</script>
+	</body>
+</html>

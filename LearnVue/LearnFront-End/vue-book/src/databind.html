@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据绑定</title>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			h2{
+				color: deepskyblue;
+			}
+			h3{
+				color: green;
+			}
+			p{
+				color: steelblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h2>数据绑定</h2>
+			<ol>
+				<li>
+					<h3>文本插值</h3>
+					<p>数据绑定最基础的形式就是文本插值，使用的是双大括号标签{{}},为Mustache语法（构建HTML的一种语法）,比如下面这种：</p>
+					<span>
+						Hello {{name}}
+					</span>
+					<p>单次插值 用v-once</p>
+					<span v-once="name">Hello {{name}}</span>
+				</li>
+				<li>
+					<h3>HTML属性</h3>
+					<p>用v-bind指令</p>
+					<div v-bind:id="'id-'+id">
+					</div>
+				</li>
+				<li>
+					<h3>绑定表达式</h3>
+					{{ index + 1 }}
+					{{ index == 0 ? 'true' : 'false'}}
+					{{ name.split('').join('-')}}
+				</li>
+				<li>
+					<h3>过滤器暂时没整懂。。。</h3>
+					<p>Vue.js允许在表达式后面添加可选的过滤器，以管道符"|"指示。</p>
+					{{ name | uppercase }}
+				</li>
+				<li>
+					<h3>指令</h3>
+					<p>1.参数</p>
+					<p>v-bind指令可以在后面带一个参数，用冒号（:）隔开,src即为参数</p>
+					<img v-bind:src="avatar" style="width: 300px;height: 150px;">
+					<p>2.修饰符</p>
+					<p>修饰符Modifiers是以半角句号.开始的特殊后缀，用于表示指令应该以特殊方式绑定。</p>
+					<button v-on:click.stop="doClick" type="button">button</button>
+				</li>
+			</ol>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					id: 1,
+					index: 0,
+					name : 'Vue',
+					avatar: 'http://picm.bbzhi.com/qichebizhi/kuanpingshouhuichaojipaochebizhi/engine_computer_vehicles_1680_24363_m.jpg',
+					count: [1, 2, 3, 4, 5],
+					names: ['Vue1.0','Vue2.0'],
+					items: [
+						{name : 'Vue1.0', version : '1.0'},
+						{name : 'Vue1.1', version : '1.0'}
+					]
+				},
+				methods:{
+					doClick:function(){
+						console.log('doClick method once')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

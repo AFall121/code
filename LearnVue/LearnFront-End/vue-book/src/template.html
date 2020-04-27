@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>模板</title>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- // 我们往往不会把所有的HTML字符串直接写在js里面，这样影响可读性而且
+		// 不易维护。所以经常用'#ap1'的方式赋值，并且在body内容添加
+		//<script id="ap1" type="x-template">为标签包含的HTML内容，这样就能
+		//将HTML从js中分离开来，如下： -->
+		<script id="ap1" type="x-template">
+			<div id="wrapper">
+				<div id="ap1">
+					<p>This is a ap1 from script tag</p>
+				</div>
+			</div>
+		</script>
+		<div id="app">
+			<p>123</p>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				template: '#ap1'
+			});
+		</script>
+		<h2 style="color: seagreen;">具体代码，参考page7 2.1.1</h2>
+	</body>
+</html>

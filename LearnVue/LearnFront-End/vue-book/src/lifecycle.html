@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>生命周期</title>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>生命周期</p>
+			<h3>总结：生命周期一般分为<strong style="color: red;">初始化init、创建前beforeCreated、创建created、挂载前beforeMounted、挂载mounted、销毁前beforeDestroy、销毁destroy</strong>也许会有更新的过程</h5>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				init: function(){
+					console.log('init')
+				},
+
+				beforeCreate:function(){
+					console.log('beforeCreated')
+				},
+				created:function(){
+					console.log('created')
+				},
+				beforeMount:function(){
+					console.log('beforeMount')
+				},
+				mounted:function(){
+					console.log('mounted')
+				},//没有执行
+				beforeDestroy:function(){
+					console.log('beforeDestroy')
+				}//没有执行
+			})
+		</script>
+	</body>
+</html>

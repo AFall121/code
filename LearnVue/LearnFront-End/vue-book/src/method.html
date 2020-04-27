@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>方法</title>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button v-on:click="alert" type="button">弹出</button>
+		</div>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el: '#app',
+				methods:{
+					alert: function(){
+						alert('hahahahha')
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

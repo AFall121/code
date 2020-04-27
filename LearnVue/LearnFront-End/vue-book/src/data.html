@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据</title>
+		<script src="../../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app1">
+			{{name}}
+			<hr >
+			<div id="">
+				<my-component title='myTitle' content='myContent'></my-component>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var data = {name: 'xiaofang'}
+			// 我们可以直接通过vm这个vue对象取到里面的data以及包含的属性
+			var vm = new Vue({
+				el: '#app1',
+				data: data,
+				components:{
+					'my-component':{
+					props: ['title','content'],
+					template: '<div><h1>{{title}}</h1><p>{{content}}</p></div>'
+			}}
+			});
+			console.log(vm.$data===data)
+			console.log(data.name===vm.name)
+			console.log(vm.$data.name)
+		</script>
+	</body>
+</html>
