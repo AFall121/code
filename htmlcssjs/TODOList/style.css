@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+}
+
+.todoWrap{
+    width: 320px;
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 6px;
+    background-color: #222;
+}
+
+.todoWrap h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.todoWrap .content{
+    margin-top: 1.5rem;
+}
+
+.todoWrap input[type='text']{
+    width: 75%;
+    height: 100%;
+    background-color: #333;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    letter-spacing: 1px;
+    text-indent: 10px;
+}
+
+.todoWrap input[type='text']:focus{
+    outline: none;
+    border: 1px solid royalblue;
+}
+
+.todoWrap .content .input-wrap,
+.todoWrap .content .item-wrap .item
+{
+    position: relative;
+    height: 32px;
+    margin-bottom: 8px;
+}
+
+.todoWrap .content .input-wrap{
+    padding: 10px;
+    background-color: rgb(99, 35, 35);
+    border-radius: 3px;
+}
+
+.todoWrap .content .input-wrap .add{
+    background-color: rgb(18, 82, 82);
+}
+
+.todoWrap .content .item-wrap .item{
+    padding: 10px;
+    background-color: rgb(18, 82, 82);
+    border-radius: 3px;
+}
+
+
+
+.todoWrap .content div button{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 2px;
+    font-size: .9rem;
+    background-color: rgb(99, 35, 35);
+}
+
+.todoWrap .content div button:hover{
+    cursor: pointer;
+}
+
+.todoWrap .content .item-wrap{
+    margin-top: 20px;
+}
+
+/* .todoWrap .content .item-wrap .item{
+    display: none;
+} */
