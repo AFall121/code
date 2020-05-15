@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    width: 15rem;
+    /* background-color: #222;这个背景不需要给，直接利用body的背景即可 */
+}
+
+.box .point{
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    /* background-color: #111; */
+    animation: loading 1.5s ease-in infinite normal;
+    animation-delay: calc( 0.25s * var(--i));
+}
+
+.box .point:nth-child(1){
+    background-color: rgb(252, 7, 7);
+}
+.box .point:nth-child(2){
+    background-color: rgb(157, 255, 0);
+}
+.box .point:nth-child(3){
+    background-color: rgb(0, 140, 255);
+}
+.box .point:nth-child(4){
+    background-color: rgb(255, 0, 200);
+}
+.box .point:nth-child(5){
+    background-color: rgb(0, 217, 255);
+}
+.box .point:nth-child(6){
+    background-color: rgb(139, 13, 223);
+}
+
+
+@keyframes loading{
+    0%,100%{
+        transform: scale(1.2);
+    }
+    50%{
+        transform: scale(.6);
+    }
+}
+
+
+
