@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="container"></div>
+    <script src="../JS/log.js"></script>
+    <script>
+        logTitle('03 class inherit')
+        class People{
+            constructor(name,age,continent){
+                this.name = name
+                this.age = age
+                this.continent = continent
+            }
+            run = ()=>{
+                log(`I'm running!`)
+            }
+        }
+
+        class Asian extends People{
+            constructor(name,age){
+                super(name,age)
+                this.continent = 'Asian'
+            }
+        }
+
+        const zhangsan = new Asian('zhangsan',18)
+        log(JSON.stringify(zhangsan))
+        log(zhangsan.run) //函数名也可做变量(arrow function)
+        //我们可以知道zhangsan.run其实就是一个函数字符串str的样子(等号后面)
+        log(zhangsan.run())// 调用zhangsan.run()函数，然后返回undefined
+        //因为此函数没有返回值嘛，所以log(undefined)得到undefined
+    </script>
+</body>
+</html>

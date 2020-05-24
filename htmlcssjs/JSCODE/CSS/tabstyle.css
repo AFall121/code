@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+}
+/* body{
+    min-height: 100vh;
+} */
+#tab{
+    width: 1000px;
+    height: 400px;
+    background-color: #f1f1f1;
+    border: 2px solid #111;
+    border-radius: 6px;
+    box-shadow: 0 0 20px #111,
+                0 0 20px #111,
+                0 0 30px #111;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+}
+#tab nav{
+    height: 60px;
+    background-color: #2e2e2e;
+    /* border-bottom: 2px solid #2e2e2e; */
+    position: relative;
+}
+#tab ul{
+    width: 70%;
+    height: 100%;
+    /*
+        为了解决li标签右边的空格问题，需要在ul样式里设置font-size:0;
+        如果需要再在li的样式中重写font-size
+    */
+    font-size: 0;
+}
+#tab ul>li{
+    list-style: none;
+    display: inline-block;
+    width: 70px;
+    height: 100%;
+    padding: 0 10px;
+    /* border-right: 1px solid #000; */
+    text-align: center;
+    outline: unset;
+    cursor: pointer;
+    position: relative;
+}
+#tab ul>li>span:nth-child(1){
+    display: block;
+    width: auto;
+    line-height: 60px;
+    position: absolute;
+    box-sizing: border-box;
+    /* text-align: center; */
+}
+#tab ul>li>span:nth-child(1) > input[type="text"]{
+    width: 50px;
+    size: 4;
+}
+#tab ul>li>span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.icon-guanbi{
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgb(57, 59, 59);
+    position: absolute;
+}
+.icon-guanbi:before{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    background-color: whitesmoke;
+    transform: translateX(-50%) rotate(45deg);
+}
+.icon-guanbi:after{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    right: 50%;
+    background-color: whitesmoke;
+    transform: translateX(50%) rotate(-45deg);
+}
+/* #tab ul>li::after,#tab ul>li::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 0;
+} */
+#tab ul>li.liactive{
+    background-color: #3e3e3e;
+    /* border-bottom: 1px solid #3e3e3e; */
+}
+#tab nav > .tabadd{
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    top: 0;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tabscon{
+    height: calc( 100% - 60px );
+    background-color: #3e3e33;
+}
+
+.tabscon > section{
+    display: none;
+}
+
+.tabscon .conactive{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}

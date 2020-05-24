@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class && Object</title>
+    <link rel="stylesheet" href="../CSS/style.css">    
+</head>
+
+<body>
+    <div class="container"></div>
+    <script type="text/javascript" src="../JS/log.js"></script>
+    <script>
+        class Person {
+            constructor(name, age) { // 构造函数or构造器
+                this.name = name
+                this.age = age
+            }
+            // 说话的方法
+            say() {
+                console.log(`${this.name}:妹子，你好！`)
+                return 'zhagnsan say hello'
+            }
+        }  
+        const zhangsan = new Person('zhangsan') 
+        zhangsan.say()   
+        log(JSON.stringify(zhangsan))
+        log(zhangsan.say())
+    </script>
+</body>
+
+</html>

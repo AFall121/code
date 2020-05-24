@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class && Object</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="container">
+    </div>
+    <script src="../JS/log.js"></script>
+    <script>
+        // 1. 创建类 class 创建一个明星类
+        class Star {
+            constructor(uname){
+                this.uname = uname;
+            }
+        }
+        // 2. 利用类创建对象 new关键字
+        var caixukun = new Star('蔡徐坤')
+        var zhangxueyou = new Star('张学友')
+        console.log(`caixukun 的名字：${caixukun.uname}`)
+        // 3.JS中函数对象   其实就是模仿的Java
+        function Phone(brand){
+            this.brand = brand
+            this.hello = function() {
+                console.log(`I'm a phone,my brand is ${this.brand}`)
+            }
+        }
+        let hw = new Phone()
+        hw.hello()
+        let hw2 = new Phone('HuaWei')
+        hw2.hello()
+        
+    </script>
+</body>
+</html>
