@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+
+body{
+    font: normal 24/32 Arial, Helvetica, sans-serif;
+    max-width: 100vw;
+    min-height: 100vh;
+    background: conic-gradient( 
+        #7e53b8 6deg,#7744bd 6deg 18deg, #6c31bd 18deg 45deg, 
+        #6c31bd 45deg 110deg, #33096e 110deg 200deg,#db23c3 200deg 300deg,purple 300deg 360deg);
+    /* background-image: radial-gradient(circle at top,purple,rgb(34, 7, 34) 15%,black); */
+    background-position: center;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-size: 1200px 1440px;
+    display: block;
+    position: relative;
+}
+
+div.cover{
+    /* display: none; */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 10;
+}
+
+#registerForm{
+    display: block;
+    width: 320px;
+    height: 375px;
+    border: 5px solid rgb(66, 3, 3);
+    /* border: 5px solid rgb(158, 93, 93); */
+    border-radius: 6px;
+    box-shadow: 0 0 .1rem white;
+    /* 0 0 .2rem white,
+    0 0 .4rem white; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    z-index: 100;
+}
+
+#registerForm > h2{
+    line-height: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: rgb(253, 161, 161);
+    text-shadow: 0 0 2rem white;
+    font-weight: 500;
+}
+
+#registerForm > .form-item{
+    display: block;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 32px;
+    position: relative;
+}
+#registerForm > .form-item > label{
+    display: block;
+    position: absolute;
+    width: 46px;
+    line-height: 32px;
+    top: -32px;
+    left: 10px;
+    color: rgb(233, 163, 163);
+    text-shadow: 0 0 1rem white,
+    0 0 1.2rem white;
+    font-weight: 700;
+    letter-spacing: 6px;
+    transition: .4s;
+}
+
+#registerForm:hover > .form-item > label{
+    top: 8px;
+}
+
+#registerForm > .form-item > input{
+    display: block;
+    border: none ;
+    outline: unset;
+    width: calc(100% - 56px);
+    height: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 .5rem #fff;
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    text-shadow: 0 0 1rem white,
+    0 0 1.2rem white;
+    padding-left: 56px;
+    color: rgb(233, 163, 163);
+    background: linear-gradient(115deg,rgba(0,0,0,0.5),rgba(0,0,0,0.4),rgba(0,0,0,0.3));
+    transition: .4s;
+}
+
+#registerForm > .form-item > input:focus{
+    text-align: center;
+}
+
+#registerForm > .registerBtn{
+    display: block;
+    width: 100%;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    letter-spacing: .5rem;
+    background-color: rgb(158, 93, 93);
+    box-shadow: 0 0 .5rem #fff;
+    text-shadow: 0 0 1rem #000,
+    0 0 5rem #000;
+    border: none;
+    outline: none;
+    transition: 1s;
+}
+
+#registerForm:hover > .registerBtn{
+    background-color: pink;
+    color: red;
+    font-weight: 500;
+}

@@ -1,0 +1,175 @@
+/*模态框*/
+.modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #d4deed;
+    /* background-color: #15131b; */
+    /* background: linear-gradient(109.61deg,#4c4f5a 1%,#202125 90%); */
+    /* background: linear-gradient(-110deg,#111111,#111131); */
+
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+/* 模态内容 */
+.modal-content{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    /* background: #313649; */
+    /* background-color: rgb(29, 30, 34); */
+    background-color: #375d9b;
+    border: 2px solid #2c205c;
+    min-width: 380px;
+    height: 310px;
+    color: white;
+    box-shadow: 0 0 10px #111;
+}
+
+.modal .modal-content > .form-close-btn{
+    display: block;
+    width: 3rem;
+    height: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal .modal-content > .form-close-btn:hover{
+    border: 3px solid #2c205c;
+}
+
+.modal .modal-content > h2{
+    width: 340px;
+    margin: 0 auto;
+    font-size: 2rem;
+    text-align: center;
+}
+/* 模态里的修改表单 */
+form[id='changeInfo']{
+    display: block;
+    width: 340px;
+    margin: 20px auto;
+    color: white;
+}
+
+form[id='changeInfo'] > .form-item{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 32px;
+}
+
+form[id='changeInfo'] .form-item > label{
+    display: block;
+    position: absolute;
+    width: 4rem;
+    height: 100%;
+    left: 0px;
+    color: whitesmoke;
+    letter-spacing: .2rem;
+    text-align: center;
+    line-height: 32px;
+    font-size: 1.3rem;
+    z-index: 10;
+}
+form[id='changeInfo'] .form-item:hover > label{
+    z-index: -1;
+    /* color: 161618; */
+}
+
+form[id='changeInfo'] .form-item > input{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding-left: 4rem;
+    border-radius: 6px;
+    background-color: #161616;
+    font-size: 1.2rem;
+    text-align: left;
+    letter-spacing: 2px;
+    /* color: #e1ca72; */
+    /* color: white; */
+    color: whitesmoke;
+    cursor: pointer;
+    outline: unset;
+}
+
+/* form[id='changeInfo'] .form-item > input:focus{
+    text-align: center;
+} */
+
+
+form[id='changeInfo'] > .changeBtn {
+    display: block;
+    width: 100%;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    background-color: rgba(166, 189, 224, .9);
+    color: rgb(34, 48, 70);
+    font-weight: 800;
+    transition: 1s;
+    /* animation: btnBgAnimate 1.5s ease-in infinite; */
+}
+
+form[id='changeInfo'] > .changeBtn:hover{
+    color: #fff;
+    background-color: rgba(166, 189, 224, .5);
+} 
+
+#addUserBtn{
+    display: inline-block;
+    padding: 0 1rem;
+    background: rgb(54, 148, 224);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+    border: none;border-radius: 6px;
+}
+
+/* 解决谷歌浏览器的自动填充样式bug */
+/* input:-internal-autofill-selected {
+    background-color: white !important;
+    background-image: none !important;
+    color: rgb(0, 0, 0) !important;
+    box-shadow: inset 0 0 0 1000px white !important;
+}
+input:-webkit-autofill {
+ box-shadow: 0 0 0px 1000px white inset !important;
+} 
+input:-webkit-autofill:focus {
+ box-shadow: 0 0 0px 1000px white inset !important;
+}  */
+
+/* @keyframes  btnBgAnimate{
+    0%,100%
+    {
+        background-image: linear-gradient(15deg,rgb(57, 58, 114),rgb(245, 66, 66),rgb(248, 238, 90),green,skyblue);
+    }
+    20%{
+        background-image: linear-gradient(15deg,skyblue,rgb(57, 58, 114),rgb(245, 66, 66),rgb(248, 238, 90),green);
+    }
+    40%{
+        background-image: linear-gradient(15deg,green,skyblue,rgb(57, 58, 114),rgb(245, 66, 66),rgb(248, 238, 90));
+    }
+    60%{
+        background-image: linear-gradient(15deg,rgb(248, 238, 90),green,skyblue,rgb(57, 58, 114),rgb(245, 66, 66));
+    }
+    80%{
+        background-image: linear-gradient(15deg,rgb(245, 66, 66),rgb(248, 238, 90),green,skyblue,rgb(57, 58, 114));
+    }
+} */
