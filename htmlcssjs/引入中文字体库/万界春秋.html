@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://cdn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            /* position: relative; */
+            background-color: #1c1c1c;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div.font-container{
+            width: 60rem;
+            height: 40rem;
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgb(250, 247, 201);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            line-height: 40rem;
+            font-size: 10rem;
+            color: rgb(255, 215, 0);
+            font-weight: 400;
+            text-shadow: 0 .2rem .5rem #000,
+                        0 -0.2rem .5rem #000,
+                        /* 0.5rem 0 .4rem #000, */
+                        0.2rem 0 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <div style="font-size: 10rem;text-align: center;font-family: Arial, Helvetica, sans-serif;">
+        你好吗明天万略秋
+
+    </div>
+    <div>
+        有一个bug就是引用了有字库的字体后，万界春秋 这四个字在其他div里也会默认引用字体，
+        解决方案:其他具体地方假若有重复字，要重新确定字体，font-family如上
+    </div>
+    <div class="font-container">
+        万界春秋love
+    </div>
+    <script type="text/javascript">
+        $webfont.load(".font-container", "a770f6863dcd426b9de47fc7bf101e01", "RS_XingKai");
+        /*$webfont.load("#id1,.class1,h1", "a770f6863dcd426b9de47fc7bf101e01", "RS_XingKai");*/
+        /*．．．*/
+        $webfont.draw();
+     </script>
+</body>
+</html>
