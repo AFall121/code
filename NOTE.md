@@ -234,3 +234,11 @@ element.offsetHeight = element.clientHeight + borderLeft-width*2
 <strong>[https://www.cnblogs.com/dolphinX/archive/2012/11/19/2777756.html]<strong>
 <strong>做笔记的目的是为了在有时忘了一些东西的时候方便查找<strong>
 
+### Prototype 
+函数对象里定义的原型方法是供实例对象去调用的，函数对象不能用！
+```
+const funcObj = function(){
+	function A(){...} //此方法只有funcObj才能调用
+	this.prototype.B = function(){}//此方法只有funcObj的实例才能调用，例如instanceA
+}
+const instanceA = new funcObj();
