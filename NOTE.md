@@ -242,3 +242,22 @@ const funcObj = function(){
 	this.prototype.B = function(){}//此方法只有funcObj的实例才能调用，例如instanceA
 }
 const instanceA = new funcObj();
+```
+### 获取异步数据
+```
+async function walk(){
+    return new Promise((resolve,reject) =>{
+        setTimeout(() => {
+            resolve('hhahah') //data: hhahah
+        }, 2000);
+        // resolve('one person is walking in the evening')
+    })
+}
+
+async function getData(){
+    const data = await walk()
+    console.log(data)
+}
+
+getData()
+```
