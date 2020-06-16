@@ -261,3 +261,6 @@ async function getData(){
 
 getData()
 ```
+
+### NodeJS路由
+通俗来讲路由就是：根据不同的url请求,按照不同的业务逻辑进行处理
