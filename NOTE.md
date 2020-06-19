@@ -243,6 +243,8 @@ const funcObj = function(){
 }
 const instanceA = new funcObj();
 ```
+### 原型链
+![avatar](./learnImages/原型链.png)
 ### 获取异步数据
 ```
 async function walk(){
