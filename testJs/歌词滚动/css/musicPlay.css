@@ -134,10 +134,25 @@ span[name='username']{
   article[data-columns='4'] {
     width: 600px;
   } */
+.my-tip{
+    position: relative;
+    line-height: 2rem;
+}
 .my-tip:hover::after{
-    width: 100px;
+    width: 200px;
     outline-offset: 1em;
     content: attr(data-tip);
     display: block;
     z-index: 10px;
+
+
+    /* 后来增加的样式*/
+    position: absolute;
+    left: 200px;
+    top: 0;
+    color: #fff;
+    font-style: italic;
+    background-color: chocolate;
+    border-radius: 6px;
+    text-align: center;
 }

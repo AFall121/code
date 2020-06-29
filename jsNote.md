@@ -1,4 +1,77 @@
 # Note
+### What are differences on && addEventListenner && attachEvent ???
+- 1. on  use for bind event
+```js
+//js:
+div.onclick=function(){
+	console.log(222222222)
+}
+//JQuery: 
+$('div').on('click',function(){
+	console.log(222222222)
+})
+```
+can be useful in almost all explore(IE,FF,Chrome,Safari,Mozilla,Opera)
+
+but,'on' only bind one same <strong>type</strong> on one dom element
+在IE，FF，Chrome，Safari，Mozilla，Opera下都适用。
+
+但是，同一个 dom 元素上，on 只能绑定一个同类型事件，后者会覆盖前者，不同类型的事件可以绑定多个。
+
+- 2. addEventListenner
+addEventListenner have 3 prams in total
+element.addEventListenner(type,listenner,useCapture);
+```js
+/**
+ * * type : event type
+ * * listenner: event listenner function\
+ * * useCapture: event listen mode       value just true or false 
+ */
+// bind
+div.addEventListenner('click', listenFn, false);
+// unbind
+div.removeEventListenner('click', listenFn, false);
+```
+addEventListenner can bind more events : events executor order :
+addEventListener可以绑定多个事件： 事件执行顺序按照事件绑定的先后顺序执行;
+
+事件处理程序会在所属元素的作用域内运行
+
+type:事件名称，注意去掉事件前边的“on”，比如“onclick”要写成“click”，“onmouseover”要写成“mouseover”
+
+listener:要绑定的事件监听函数
+
+userCapture：事件监听方式，只能是true和false：true，采用capture(捕获)模式；false，采用bubbling(冒泡)模式。如无特殊要求，一般是false。
+
+addEventListener()是标准的绑定事件监听函数的方法，是W3C所支持的，Chrome、FireFox、Opera、Safari、IE9.0及其以上版本都支持该函数；但是，IE8.0及其以下版本不支持该方法，它使用attachEvent()来绑定事件监听函数（IE11开始不支持了）
+
+- 3. attachEvent
+attachEvent有两个参数：
+
+type：事件名称，注意加上事件前边的“on”，比如“onclick”和“onmouseover”，这是与addEventListener的区别。
+
+listener：要绑定的事件监听函数
+
+在使用attachEvent()方法的情况下, 事件处理程序会在全局作用域中运行, 因此this等于window。
+
+	div.attchEvent('onlick',function(){
+
+	})
+attchEvent绑定多个事件的执行顺序是随机的。
+
+	小结：
+
+	在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。
+
+	本质的区别：el.onclick相当于在标签上写onclick，用addEventListener和attachEvent是通过DOM接口去绑定事件。
+
+	一个html文档的解析是有顺序的，先解析标签项，再解析DOM项，el.onclick事实上相当于写在标签上，
+
+	通过标签的onclick属性输入到文档，然后由文档解析成事件的。而后者，要在文档解析完成以后，
+
+	通过文档的dom接口去绑定的事件，虽然结果是一样的，都是click事件，但是过程是不同的
+
+
 #### jquery $(document).ready() 与window.onload的区别
 - 1.执行时间
 
