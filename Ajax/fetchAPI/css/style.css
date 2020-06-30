@@ -1,0 +1,25 @@
+.dataTable{
+    position: relative;
+    margin: 20px auto;
+    padding: 10px;
+    width: 600px;
+    color: rgb(11, 16, 32);
+    border: .2rem solid rgb(106, 203, 233); 
+    border-radius: .4rem;   
+    box-shadow: 0 0 1rem rgb(84, 185, 216),
+                inset 0 0 .7rem rgb(106, 203, 233);
+}
+.dataTable > thead > tr{
+    height: 2rem;
+    background-color: skyblue;
+}
+.dataTable td{
+    padding: 0 10px;
+}
+.dataTable > tbody > tr{
+    line-height: 1.8rem;
+}
+.dataTable > tbody > tr:nth-child(even){
+    background-color: rgb(124, 190, 235);
+    box-shadow: 0 0 .5rem rgb(124, 190, 235);
+}
