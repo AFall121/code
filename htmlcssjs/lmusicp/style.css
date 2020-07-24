@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.photo {
+    width: 320px;
+    height: 600px;
+    background-color: aqua;
+    background: linear-gradient(180deg, rgb(236, 184, 236), rgb(89, 167, 167))fixed;
+    margin: 50px auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #2c606d;
+    border-radius: 6px;
+    box-shadow: 0 0 7px #ead5ee;
+}
+
+.title {
+    margin-top: 5px;
+    width: 100%;
+    line-height: 70px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.singer {
+    line-height: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.play {
+    width: 152px;
+    height: 152px;
+    background: url(./common/img/play.jpg) center/80%;
+    border-radius: 50%;
+    margin: auto;
+}
+.lrc{
+    width: 100%;
+    height: 220px;
+    margin-top: 50px;
+    text-align: center;
+    /* background-color: aquamarine; */
+    overflow: hidden;
+}
+
+.lrc p{
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.content{
+    position: relative;
+}
+
+.play.rotate{
+    animation: animation-rotate 2s linear .2s infinite;
+}
+
+@keyframes animation-rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
