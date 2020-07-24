@@ -318,6 +318,26 @@ const instanceA = new funcObj();
 ```
 ### 原型链
 ![avatar](./learnImages/原型链.png)
+两个链:作用域链和原型链
+- 变量找作用域链，方法找原型链
+
+
+
+### 闭包 
+定义： 内部函数调用外部函数的变量！！！！
+- 1 函数嵌套：外部函数和内部函数
+- 2 内部函数调用外部函数的变量
+```js
+function A(){
+	let a = 13;
+	function B(){ 
+		console.log(a)
+	}
+	return B
+}
+
+
+
 ### 获取异步数据
 ```
 async function walk(){

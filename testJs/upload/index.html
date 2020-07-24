@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="inpFile" id="inpFile" multiple>
+    <button id="upbtn">upload</button>
+    <script>
+        const a = {
+            name: "zhangsan",
+            age: 12,
+            address: 'gaolouo'
+        }
+        const b = {
+            name: "lisi",
+            age:18,
+            address: 'kkkkk'
+        }
+        console.log(a,b)
+        const c = [
+            a,b
+        ]
+        console.log(c)
+        c.map((value, index, array) => {
+            console.log(value)
+        })
+
+
+        const inpFile = document.getElementById('inpFile')
+        const upbtn = document.getElementById('upbtn')
+        upbtn.addEventListener('click', function(){
+            // console.log(inpFile.files)
+            const formData = new FormData()
+            for (const file of inpFile.files) {
+                console.log(file)
+                formData.append('myFiles[]',file)
+            }
+            const xhr = new XMLHttpRequest()
+            xhr.open("post","upload.php")
+            xhr.send(formData)
+
+        })
+        
+    </script>
+</body>
+</html>
