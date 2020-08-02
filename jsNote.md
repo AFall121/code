@@ -335,7 +335,7 @@ function A(){
 	}
 	return B
 }
-
+```
 
 
 ### 获取异步数据
@@ -359,3 +359,16 @@ getData()
 
 ### NodeJS路由
 通俗来讲路由就是：根据不同的url请求,按照不同的业务逻辑进行处理
+
+
+
+### js中取消表单提交默认行为的方法
+```js
+$('#loginForm').on('submit',function(e){
+	// 阻止默认事件
+	e.preventDefault() // 方法一
+	// return false; // 方法二
+})
+// 方法一 添加e参数，并在开始 e.preventDefault()
+// 方法二 末尾 返回false
+```
