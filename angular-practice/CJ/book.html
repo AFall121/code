@@ -1,0 +1,11 @@
+<div class="col-xs-4">
+  <img ng-src="{{book.cover_url}}" alt="jpg" class="img-responsive">
+</div>
+<div class="col-xs-8">
+  <h3>{{book.title}}</h3>
+  <h4>authors:
+    <span ng-repeat="author in book.authors">
+      {{author.first_name}} {{author.last_name}} <span ng-if="!$index==book.authors.length-1">,</span></span>
+  </h4>
+  <p>{{book.description}}</p>
+</div>

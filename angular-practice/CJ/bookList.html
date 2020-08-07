@@ -1,0 +1,26 @@
+<div ng-controller="BooksController as $ctr1">
+  <div class="text-center">
+    <button type="button" class="btn btn-primary" ng-click="$ctr1.decreaseCount()">decrease</button>
+    <span class="text-danger">{{$ctr1.count}}</span>
+    <button type="button" class="btn btn-primary" ng-click="$ctr1.increaseCount()">increase</button>
+  </div>
+  <form action="" class="form">
+    <div class="form-group">
+      <label for="search">Search</label>
+      <input ng-model="$ctr1.search" type="text" class="form-control" id="search">
+    </div>
+  </form>
+  <div ng-repeat="book in $ctr1.books | filter:$ctr1.search" class="row">
+    <div class="col-xs-4">
+      <img ng-src="{{book.cover_url}}" alt="jpg" class="img-responsive">
+    </div>
+    <div class="col-xs-8">
+      <h3>{{book.title}}</h3>
+      <h4>authors:
+        <span ng-repeat="author in book.authors">
+          {{author.first_name}} {{author.last_name}} <span ng-if="!$index==book.authors.length-1">,</span></span>
+      </h4>
+      <p>{{book.description}}</p>
+    </div>
+  </div>
+</div>
