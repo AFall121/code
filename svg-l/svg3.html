@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arc</title>
+  <style>
+    #arc {
+      stroke-dasharray: 63;
+      stroke-dashoffset: 0;
+      transform-origin: 50% 50%;
+      transform: scaleX(-1);
+      fill: blue;
+      fill-opacity: 0;
+    }
+
+    text {
+      font-size: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="range" id="range" value="0" min="0" max="" step="1">
+  <input type="number" id="number" value="0" min="0" max="">
+  <div id="arclength"></div>
+  <br>
+  <svg viewBox="0 0 100 100" version="1.1" style="border: solid green">
+    <g id="grid" stroke="green" stroke-width=".2">
+      <path d="m 0 10 h 100" />
+      <path d="m 0 20 h 100" />
+      <path d="m 0 30 h 100" />
+      <path d="m 0 40 h 100" />
+      <path d="m 0 50 h 100" stroke-width="1" />
+      <path d="m 0 60 h 100" />
+      <path d="m 0 70 h 100" />
+      <path d="m 0 80 h 100" />
+      <path d="m 0 90 h 100" />
+
+      <path d="m 10 0 v 100" />
+      <path d="m 20 0 v 100" />
+      <path d="m 30 0 v 100" />
+      <path d="m 40 0 v 100" />
+      <path d="m 50 0 v 100" stroke-width="1" />
+      <path d="m 60 0 v 100" />
+      <path d="m 70 0 v 100" />
+      <path d="m 80 0 v 100" />
+      <path d="m 90 0 v 100" />
+    </g>
+
+    <g id="points" fill="hsl(25,100%,50%)">
+      <circle cx="30" cy="50" r="1" />
+      <circle cx="50" cy="50" r="1" />
+      <circle cx="70" cy="50" r="1" />
+    </g>
+
+    <path id="bluearc" d="m30 50 A20 20,0,0 1,70 50" fill="none" stroke="blue" stroke-width=".85" />
+    <path id="arc" d="m30 50 A20 20,0,0 1,70 50" fill="none" stroke="white" stroke-width="1" />
+
+    <text x="50%" y="45%" text-anchor="middle" dominant-baseline="central">0%</text>
+  </svg>
+
+  <script>
+    const range = document.querySelector('#range')
+    const number = document.querySelector('#number')
+    const arc = document.querySelector('#arc')
+    const length = document.querySelector('#arclength')
+    const text = document.querySelector('text')
+
+    length.innerHTML = arc.getTotalLength()
+
+    range.oninput = function () {
+      number.value = this.value
+      text.innerHTML = this.value + '%'
+      let percentN = this.value * arc.getTotalLength() / 100
+      arc.style.strokeDashoffset = percentN
+      arc.style.fillOpacity = this.value / 100
+
+      if (this.value > 50) {
+        text.style.fill = "white"
+      } else {
+        text.style.fill = "black"
+      }
+    }
+
+
+  </script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弧形</title>
+</head>
+
+<body>
+  <svg viewBox="0 0 100 100" style="border: solid green">
+    <style>
+      .myArc {
+        stroke: blue;
+      }
+    </style>
+
+    <g id="gridLines" stroke="green">
+      <!-- 网格 -->
+      <g stroke-width=".2">
+        <path d="M 0 10 h 100" />
+        <path d="M 0 20 h 100" />
+        <path d="M 0 30 h 100" />
+        <path d="M 0 40 h 100" />
+        <path d="M 0 50 h 100" />
+        <path d="M 0 60 h 100" />
+        <path d="M 0 70 h 100" />
+        <path d="M 0 80 h 100" />
+        <path d="M 0 90 h 100" />
+
+        <path d="M 10 0 v 100" />
+        <path d="M 20 0 v 100" />
+        <path d="M 30 0 v 100" />
+        <path d="M 40 0 v 100" />
+        <path d="M 50 0 v 100" />
+        <path d="M 60 0 v 100" />
+        <path d="M 70 0 v 100" />
+        <path d="M 80 0 v 100" />
+        <path d="M 90 0 v 100" />
+      </g>
+      <g stroke-width="1">
+        <path d="M 50 0 V 100" />
+        <path d="M 0 50 H 100" />
+      </g>
+    </g>
+    <!-- 参数说明参考mdn：https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths -->
+    <!-- 值得说明的一点是当A后的第一个参数即x轴半径小于固定的x轴半径时，此时按比进行算，如果大于等于实际值，直接按实际值作为x轴半径和y轴半径
+    比如 下面固定值为20 ，当我写成1 2时，则将20作为1个单位 19比20 还是将20作为固定的x轴半径，y轴半径为400/19
+    当我写成 40 80 时，则x轴半径实际为40 y轴半径为80，此时后面的小弧还是大弧以及方向的参数即为重要 -->
+
+    <!-- <path fill="royalblue" class="myArc" d="M 30 50 A 1 2, 0, 0 1, 70 50" />
+    <path fill="royalblue" class="myArc" d="M 30 50 A 1 2, 0, 1 0, 70 50" /> -->
+
+    <!-- rotate45deg -->
+    <!-- <path fill="royalblue" class="myArc" d="M 30 50 A 1 2, 45, 0 1, 70 50" />
+    <path fill="royalblue" class="myArc" d="M 30 50 A 1 2, 45, 1 0, 70 50" /> -->
+
+    <!-- 上旋转45deg下旋转-45deg，形成了一颗心 -->
+    <path fill="royalblue" class="myArc" d="M 30 50 A 20 40, 45, 1 1, 70 50" />
+    <path fill="royalblue" class="myArc" d="M 30 50 A 1 2, -45, 1 0, 70 50" />
+
+    <g id="points" stroke="red" stroke-width="1" fill="none">
+      <circle cx="30" cy="50" r=".5" />
+      <circle cx="50" cy="50" r=".5" />
+      <circle cx="70" cy="50" r=".5" />
+    </g>
+  </svg>
+</body>
+
+</html>

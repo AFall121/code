@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .x {
+      font-size: 2px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <svg viewBox="0 0 100 100" style="border: solid green;">
+
+
+    <!-- 先画网格线和坐标轴 -->
+    <!-- 横线 -->
+    <path stroke="green" stroke-width=".2" d="M 0 10 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 20 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 30 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 40 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 50 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 60 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 70 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 80 h 100" />
+    <path stroke="green" stroke-width=".2" d="M 0 90 h 100" />
+
+    <!-- 竖线 -->
+    <path stroke="green" stroke-width=".2" d="M 10 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 20 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 30 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 40 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 50 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 60 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 70 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 80 0 v 100" />
+    <path stroke="green" stroke-width=".2" d="M 90 0 v 100" />
+
+    <!-- X轴 -->
+    <path stroke="green" stroke-width="1" d="M 0 50 h 100 " />
+    <!-- x轴基本坐标 -->
+    <text x="0" y="49" style="font-size:40%;">X</text>
+    <text class="x" x="10" y="50">10</text>
+    <text class="x" x="20" y="50">20</text>
+    <text class="x" x="30" y="50">30</text>
+    <text class="x" x="40" y="50">40</text>
+    <text class="x" x="50" y="50">50</text>
+    <text class="x" x="60" y="50">60</text>
+    <text class="x" x="70" y="50">70</text>
+    <text class="x" x="80" y="50">80</text>
+    <text class="x" x="90" y="50">90</text>
+
+
+    <!-- Y轴 -->
+    <path stroke="green" stroke-width="1" d="M 50 0 v 100 " />
+    <!-- y轴基本坐标 -->
+    <text x="50" y="5" style="font-size:40%;">Y</text>
+    <text class="x" y="10" x="50">10</text>
+    <text class="x" y="20" x="50">20</text>
+    <text class="x" y="30" x="50">30</text>
+    <text class="x" y="40" x="50">40</text>
+    <text class="x" y="50" x="50">50</text>
+    <text class="x" y="60" x="50">60</text>
+    <text class="x" y="70" x="50">70</text>
+    <text class="x" y="80" x="50">80</text>
+    <text class="x" y="90" x="50">90</text>
+
+
+    <!-- 画一个圆 circle -->
+    <!-- <circle stroke="maroon" stroke-width="1" fill="red" style="opacity:.1;" cx="50" cy="50" r="30" /> -->
+
+    <!-- 画一个椭圆 ellipse -->
+    <!-- <ellipse stroke="maroon" stroke-width="1" fill="none" cx="50" cy="50" rx="20" ry="40" /> -->
+
+    <!-- 画一个多边形 polygon -->
+    <!-- <polygon stroke="maroon" stroke-width="1" fill="none" points="25 45,30 40,60 45,70 60,60 80,10 67" /> -->
+
+    <!-- 画一条折线 polyline -->
+    <!-- <polyline stroke="maroon" stroke-width="1" fill="none" points="25,10,39 27,58 67,30 40" /> -->
+
+    <!-- 画曲线 -->
+    <!-- 二次贝塞尔曲线 只需要一个控制点 用 Q 命令 ，用 T 命令可以通过前一个控制点推断出一个新的控制点 -->
+    <!-- <path stroke="blue" stroke-width="1" fill="none" d="M 20 50 Q 50 10,30 50" /> -->
+    <path stroke="blue" stroke-width="1" fill="none" d="M 20 50 Q 50 10,30 50 T 60 80" />
+    <!-- 三次贝塞尔曲线需要两个控制点 用 C 命令 ，用 S 命令可以方便画三次曲线-->
+    <!-- <path stroke="blue" stroke="1" fill="none" d="M 30 50 C 40 55, 70 70, 70 50," /> -->
+    <!-- <path stroke="blue" stroke="1" fill="none" d="M 30 50 C 40 55, 70 70, 70 50 S 50 40,60 20" /> -->
+
+
+
+  </svg>
+</body>
+
+</html>
