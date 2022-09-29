@@ -16,7 +16,7 @@
 		"url": "to-do..."
 	},
 	"dependencies": {
-		"d3": "4.x"
+		"d3": "7.x"
 	},
 	"devDependencies": {
 		"uglify-js": "2.x"
